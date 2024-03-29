@@ -2,16 +2,53 @@
     <div class="app">
         <div>
             <!-- Contenu des associations ici -->
-            <h2>Liste association</h2>
+
             <div class="bar"></div>
             <!-- Exemple de contenu -->
-            <div class="search-container">
-                <input
-                    class="searchbar"
-                    type="text"
-                    placeholder="Rechercher..."
-                />
-            </div>
+
+            <nav>
+                <div id="mainNav">
+                    <RouterLink to="/">Accueil</RouterLink>
+                    <RouterLink to="/search"> Association</RouterLink>
+                    <RouterLink to="/searchEvent"> Évènement</RouterLink>
+                    <div class="conteneur">
+                        <input
+                            type="text"
+                            name="text"
+                            class="input"
+                            required=""
+                            placeholder="Type to search..."
+                        />
+
+                        <div class="icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="ionicon"
+                                viewBox="0 0 512 512"
+                            >
+                                <title>Search</title>
+                                <path
+                                    d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-miterlimit="10"
+                                    stroke-width="32"
+                                ></path>
+                                <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-miterlimit="10"
+                                    stroke-width="32"
+                                    d="M338.29 338.29L448 448"
+                                ></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <h2>Association</h2>
         </div>
         <div class="list-row">
             <button class="point">
@@ -88,6 +125,33 @@
                     />
                     <circle cx="14.5" cy="14" r="5" fill="#F36EFF" />
                 </svg>
+                Aide
+            </button>
+            <button class="point">
+                <svg
+                    width="29"
+                    height="29"
+                    viewBox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <circle
+                        opacity="0.3"
+                        cx="14.0185"
+                        cy="14.1162"
+                        r="14"
+                        transform="rotate(-0.0759247 14.0185 14.1162)"
+                        fill="#E1D885"
+                    />
+                    <circle
+                        cx="14.0183"
+                        cy="14.1164"
+                        r="5"
+                        transform="rotate(-0.0759247 14.0183 14.1164)"
+                        fill="#E1D885"
+                    />
+                </svg>
+
                 Aide
             </button>
         </div>
@@ -213,8 +277,9 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                    /></svg>
-                    Association 5
+                    />
+                </svg>
+                Association 5
             </button>
             <button class="list-asso">
                 <svg
@@ -237,8 +302,9 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                    /></svg>
-                    Association 6
+                    />
+                </svg>
+                Association 6
             </button>
             <button class="list-asso">
                 <svg
@@ -261,8 +327,9 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                    /></svg>
-                    Association 7
+                    />
+                </svg>
+                Association 7
             </button>
             <button class="list-asso">
                 <svg
@@ -285,8 +352,9 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                    /></svg>
-                    Association 8
+                    />
+                </svg>
+                Association 8
             </button>
         </div>
     </div>
@@ -344,14 +412,16 @@
     justify-content: center;
     align-items: center;
     margin: 0 10px;
-    padding: 3%;
+    padding: 2%;
     list-style: none;
     gap: 3%;
-    width: 100%;
+    width: 80%;
+    background-color: #393939;
+    border-radius: 50px;
 }
 
 .searchbar {
-    width: 150%;
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -363,7 +433,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: -20%;
 }
 
 .list-asso {
@@ -380,7 +449,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #464646;
+    background: #313131;
 }
 
 .list-association {
@@ -420,20 +489,116 @@ h2 {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    border: none;
+    background-color: #313131;
 }
 
 .bar {
     width: 100%;
-    height: 2px;
-    background: white;
+    height: 1px;
+    background: rgb(124, 124, 124);
     margin: 40px 0;
 }
 
+@media screen and (max-width: 768px) {
+    .list-row {
+        background-color: #313131;
+    }
+}
+
+nav[data-v-79bc48c9] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#mainNav {
+    display: flex;
+
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+    width: 55%;
+    gap: 50px;
+}
+
+nav li {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav li:hover {
+    color: #f5a623;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-family: "Poppins";
+    text-align: center;
+    padding: 20px;
+}
+.conteneur {
+    position: relative;
+    --size-button: 48px;
+    color: white;
+    width: 0px;
+    
+}
+
+.input {
+    padding-left: var(--size-button);
+    height: var(--size-button);
+    font-size: 15px;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: var(--size-button);
+    transition: all ease 0.3s;
+    background-color: #191a1e;
+    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%),
+        inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.input:focus,
+.input:not(:invalid) {
+    width: 200px;
+    cursor: text;
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%),
+        inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+}
+
+.input:focus + .icon,
+.input:not(:invalid) + .icon {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.conteneur .icon {
+    position: absolute;
+    width: var(--size-button);
+    height: var(--size-button);
+    top: 0;
+    left: 0;
+    padding: 8px;
+    pointer-events: none;
+}
+
+.conteneur .icon svg {
+    width: 100%;
+    height: 100%;
+}
 </style>
 
 <script>
 export default {
     // Composant des associations
 };
-
 </script>

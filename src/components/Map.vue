@@ -237,7 +237,6 @@ body {
     background: 27292E;
     margin: 0;
     padding: 0;
-    cursor: url("../assets/cursor.png"), auto;
 }
 
 .titre {
@@ -351,6 +350,7 @@ button:hover {
     width: 70%;
     border-radius: 20px;
     height: 25px;
+    padding: 5px;
 }
 
 /* Appliquer ces styles pour les écrans d'ordinateur (largeur minimale de 1024px) */
